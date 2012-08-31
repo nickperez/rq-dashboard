@@ -46,7 +46,7 @@ h1 strong.failed {
 
 h1 strong.active {
     color: green;
-    text-shadow: 0 -1px #292;
+    text-shadow: 0 -1px #0C0;
 }
 
 table, table tr, table tr td {
