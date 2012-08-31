@@ -68,9 +68,12 @@ def serialize_job(job):
 @dashboard.route('/<queue_name>')
 def overview(queue_name):
     if queue_name is None:
-        # Show the failed queue by default if it contains any jobs
+        # Show the active queue by default if it contains any jobs
+        active = Queue('active')
         failed = Queue('failed')
-        if not failed.is_empty():
+        if not active.is_empty():
+            queue = active
+        elif not failed.is_empty():
             queue = failed
         else:
             queue = Queue()
